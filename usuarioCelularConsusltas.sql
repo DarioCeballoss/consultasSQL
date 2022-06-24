@@ -34,7 +34,18 @@ select DISTINCT(marca) from Usuarios order by marca desc;
 select nombre from Usuarios 
 where saldo<=0 or activo = false;
 
-
+--Listar nombre y teléfono de los usuarios con teléfono NOKIA, BLACKBERRY o SONY
+select nombre, telefono from Usuarios 
+where marca= 'NOKIA' or marca = 'BLACKBERRY' or marca = 'SONY' order by nombre;
+--Contar los usuarios sin saldo o inactivos
+select count(usuario) from Usuarios 
+where saldo <= 0 or activo = false;
+--Listar el login de los usuarios con nivel 1, 2 o 3
+select usuario from Usuarios 
+where nivel >= 1 and nivel <= 3;
+--Listar los números de teléfono con saldo menor o igual a 300
+select telefono, saldo from Usuarios 
+where saldo <= 300 order by saldo;
 
 
 
